@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON Parser</title>
+  <style>
+    #json-input {
+      width: 500px;
+      height: 150px;
+    }
+
+    #parsed-output {
+      width: 500px;
+      height: 150px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>JSON Parser</h1>
+  <textarea id="json-input" placeholder="Enter JSON data here..."></textarea>
+  <button id="parse-button">Parse JSON</button>
+  <div id="parsed-output"></div>
+
+  <script>
+    const jsonInput = document.getElementById('json-input');
+    const parseButton = document.getElementById('parse-button');
+    const parsedOutput = document.getElementById('parsed-output');
+
+    parseButton.addEventListener('click', () => {
+      try {
+        const jsonData = JSON.parse(jsonInput.value);
+        parsedOutput.textContent = JSON.stringify(jsonData, null, 2); // Pretty-print JSON
+        parsedOutput.classList.remove('error'); 
+      } catch (error) {
+        parsedOutput.textContent = 'Invalid JSON: ' + error.message;
+        parsedOutput.classList.add('error');
+      }
+    });
+  </script>
+</body>
+</html>
