@@ -9,3 +9,13 @@ find index.html inside this repository and find the entire code of the html pars
 
 
 
+if you dont want to start in local host server :
+
+try the copy code from index.html and paste inside this code editor here for testing the source code,
+
+simply change entire code with existing html code inside after you copied from index.html file 
+
+you can then test run and parse json files
+
+
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_json_parse
